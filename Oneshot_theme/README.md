@@ -26,6 +26,7 @@ Warm purple & gold desktop theme for Hyprland, Waybar, terminals, editors, and m
 | `vscode.json` | VS Code theme config |
 | `themes/oneshot-color-theme.json` | Full VS Code extension theme |
 | `chromium.theme` | Chromium theme |
+| `tmux.conf` | Tmux terminal multiplexer |
 | `icons.theme` | Icon theme config |
 | `colors.toml` / `colors.conf` | Shared color variables |
 | `floatbar/` | Float bar OSD |

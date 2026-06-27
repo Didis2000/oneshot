@@ -18,7 +18,7 @@ oneshot/
 │       ├── backgrounds/       # Wallpapers
 │       ├── themes/            # VS Code extension
 │       ├── floatbar/          # Float bar OSD
-│       └── ...config files    # App-specific theme configs
+│       └── ...config files    # App-specific theme configs (tmux, terminals, editors, etc.)
 ├── README.md                  # This file
 ├── install.sh                 # Setup script
 └── LICENSE
