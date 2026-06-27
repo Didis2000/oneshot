@@ -2,7 +2,8 @@
 # Generate Oneshot theme from wallpaper via tinct color extraction
 set -euo pipefail
 
-THEME_DIR=~/.config/omarchy/themes/oneshot
+REPO_ROOT=~/.config/omarchy/themes/oneshot
+THEME_DIR="$REPO_ROOT/Oneshot_theme/oneshot-oneshot-theme"
 TINCT_CMD="/home/idriss/.local/share/mise/installs/go/1.26.2/bin/tinct"
 
 # --- Fixed Oneshot identity colors (always override) ---

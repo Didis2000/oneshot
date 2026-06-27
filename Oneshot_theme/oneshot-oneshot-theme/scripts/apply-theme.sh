@@ -2,9 +2,11 @@
 # Apply the generated oneshot theme directly (bypasses slow omarchy-theme-set)
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 THEME_NAME="oneshot"
+REPO_ROOT="$HOME/.config/omarchy/themes/$THEME_NAME"
 CURRENT="$HOME/.config/omarchy/current/theme"
-SOURCE="$HOME/.config/omarchy/themes/$THEME_NAME"
+SOURCE="$REPO_ROOT/Oneshot_theme/oneshot-oneshot-theme"
 
 # Copy theme files
 rm -rf "$CURRENT"

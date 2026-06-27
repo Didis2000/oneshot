@@ -12,9 +12,12 @@ if pgrep -x awww-daemon >/dev/null 2>&1; then
   awww img "$CURRENT_BG" --transition-type random --transition-step 90 --transition-fps 30 || true
 fi
 
-# 3. Regenerate theme configs from the new wallpaper
-cd "$HOME/.config/omarchy/themes/oneshot"
-bash generate.sh --wallpaper
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+THEME_DIR="$(dirname "$SCRIPT_DIR")"
 
-# 3. Apply theme directly
-bash "$HOME/.config/omarchy/themes/oneshot/apply-theme.sh"
+# 3. Regenerate theme configs from the new wallpaper
+cd "$THEME_DIR"
+bash "$SCRIPT_DIR/generate.sh" --wallpaper
+
+# 4. Apply theme directly
+bash "$SCRIPT_DIR/apply-theme.sh"

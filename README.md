@@ -1,90 +1,27 @@
-# Oneshot Theme
+# Oneshot
 
-Warm purple & gold desktop theme for Hyprland, Waybar, terminals, editors, and more.
+Warm purple & gold desktop theme for [Hyprland](https://hyprland.org), [Waybar](https://github.com/Alexays/Waybar), terminals, and editors.
 
-## What's Included
+Inspired by the game *Oneshot*.
 
-| Config | App |
-|--------|-----|
-| `hyprland.conf` | Hyprland window manager |
-| `waybar.css` | Waybar status bar |
-| `mako.ini` | Mako notification daemon |
-| `hyprlock.conf` | Hyprlock screen locker |
-| `swayosd.css` | SwayOSD on-screen display |
-| `walker.css` | Walker application launcher |
-| `gtk.css` | GTK3/4 theme |
-| `foot.ini` | Foot terminal |
-| `kitty.conf` | Kitty terminal (colors only) |
-| `alacritty.toml` | Alacritty terminal (colors only) |
-| `ghostty.conf` | Ghostty terminal (colors only) |
-| `btop.theme` | Btop system monitor |
-| `cava_theme` | Cava audio visualizer |
-| `firefox.css` | Firefox (via userChrome.css) |
-| `neovim.lua` | Neovim colorscheme |
-| `nvim-oneshot.lua` | Neovim colorscheme source |
-| `emacs-oneshot-theme.el` | Doom Emacs theme |
-| `vscode.json` | VS Code theme config |
-| `themes/oneshot-color-theme.json` | Full VS Code extension theme |
-| `chromium.theme` | Chromium theme |
-| `icons.theme` | Icon theme config |
-| `colors.toml` / `colors.conf` | Shared color variables |
-| `floatbar/` | Float bar OSD |
+## Structure
 
-## Color System
-
-| Role | Color |
-|------|-------|
-| Background | `#070324` |
-| Gold accent | `#d4a54a` |
-| Gold bright | `#f0c860` |
-| Cream text | `#e8d5b7` |
-| Cream dim | `#b8a88a` |
-| Cyan | `#6a9a9a` |
-| Surface | extracted from wallpaper |
-
-Supporting colors (SURFACE, CONTAINER, BASE, BORDER, RED, GREEN, BLUE, MAGENTA) are dynamically extracted from the current wallpaper using [tinct](https://github.com/Blade2901/tinct). Identity colors (BG, GOLD, GOLD_BRIGHT, CREAM, CREAM_DIM, CYAN) are fixed overrides.
-
-## Quick Start
-
-### Requirements
-- [Omarchy](https://omarchy.dev) desktop environment
-- [awww](https://codeberg.org/seraphicfae/awww) wallpaper daemon
-- [tinct](https://github.com/Blade2901/tinct) color extractor
-- A terminal emulator (foot, kitty, alacritty, or ghostty)
-
-### Install
-```bash
-THEME_DIR="$HOME/.config/omarchy/themes/oneshot"
-git clone https://github.com/Didis2000/oneshot $THEME_DIR
-ln -sfn "$THEME_DIR" "$HOME/.config/omarchy/current/theme"
-omarchy theme set oneshot
+```
+oneshot/
+├── Oneshot_theme/
+│   ├── README.md              # Theme documentation & usage
+│   └── oneshot-oneshot-theme/ # Theme config files
+│       ├── scripts/           # Theme generation tooling
+│       │   ├── generate.sh
+│       │   ├── cycle-theme.sh
+│       │   └── apply-theme.sh
+│       ├── backgrounds/       # Wallpapers
+│       ├── themes/            # VS Code extension
+│       ├── floatbar/          # Float bar OSD
+│       └── ...config files    # App-specific theme configs
+├── README.md                  # This file
+├── install.sh                 # Setup script
+└── LICENSE
 ```
 
-### Cycling
-Press `SUPER SHIFT + R` to cycle wallpapers and regenerate the theme.
-
-Or manually:
-```bash
-cd ~/.config/omarchy/themes/oneshot
-./cycle-theme.sh
-```
-
-### Regenerate from wallpaper
-```bash
-./generate.sh --wallpaper
-```
-
-### Regenerate with hardcoded palette
-```bash
-./generate.sh
-```
-
-## Scripts
-
-- `generate.sh` — regenerate all config files (no args = hardcoded palette, `--wallpaper` = extract from current wallpaper)
-- `cycle-theme.sh` — cycle wallpaper → extract → apply
-- `apply-theme.sh` — copy theme files, restart services
-
-## License
-
-MIT
+See [Oneshot_theme/README.md](Oneshot_theme/README.md) for full documentation.
