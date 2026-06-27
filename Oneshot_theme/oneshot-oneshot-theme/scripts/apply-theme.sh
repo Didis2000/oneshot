@@ -56,4 +56,7 @@ for ffdir in "$HOME/.mozilla/firefox"/*.default* "$HOME/.mozilla/firefox/chrome"
   fi
 done
 
+# Reload tmux config for existing sessions
+tmux source-file ~/.config/tmux/tmux.conf 2>/dev/null || true
+
 notify-send -t 2000 "Oneshot theme applied"

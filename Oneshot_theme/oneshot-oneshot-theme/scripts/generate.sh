@@ -1015,5 +1015,27 @@ with open('$THEME_DIR/emacs-oneshot-theme.el', 'w') as f:
 }
 echo "  emacs-oneshot-theme.el ✓"
 
+cat > "$THEME_DIR/tmux.conf" << TMUXEOF
+# --- Oneshot tmux theme (auto-generated) ---
+set -g status-style "bg=$BG,fg=$CREAM"
+set -g message-style "bg=$BG,fg=$GOLD"
+set -g message-command-style "bg=$BG,fg=$GOLD"
+set -g mode-style "bg=$GOLD,fg=$BG"
+
+set -g status-left "#[fg=$BG,bg=$GOLD,bold] #S "
+set -g status-right "#[fg=$GOLD]#{?client_prefix,PREFIX ,}#[fg=$CREAM_DIM] %H:%M "
+set -g status-left-length 40
+set -g status-right-length 80
+set -g window-status-separator ""
+
+set -g window-status-format "#[fg=$CREAM_DIM] #I:#W "
+set -g window-status-current-format "#[fg=$BG,bg=$GOLD,bold] #I:#W "
+
+set -g pane-border-style "fg=$BORDER"
+set -g pane-active-border-style "fg=$GOLD"
+setw -g clock-mode-colour "$GOLD"
+TMUXEOF
+echo "  tmux.conf ✓"
+
 echo ""
 echo "Done! All theme files regenerated from base palette."

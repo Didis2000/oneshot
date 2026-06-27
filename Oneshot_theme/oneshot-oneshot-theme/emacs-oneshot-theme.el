@@ -2,9 +2,9 @@
   "Oneshot theme for Emacs -- warm purple & gold.")
 
 (let ((bg "#070324") (fg "#e8d5b7") (gold "#d4a54a") (gbr "#f0c860")
-      (surf "#24146b") (cont "#201165") (bord "#4d466b")
-      (red "#de6448") (grn "#30dd50") (blu "#4c99e5")
-      (mag "#bd6ee1") (cyn "#6a9a9a") (dim "#b8a88a"))
+      (surf "#0f0544") (cont "#2b0e77") (bord "#1a0544")
+      (red "#e07a5f") (grn "#8bba7a") (blu "#4a6a9a")
+      (mag "#c4a0b0") (cyn "#6a9a9a") (dim "#b8a88a"))
   (custom-theme-set-faces
    'emacs-oneshot
 
