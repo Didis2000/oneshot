@@ -1015,27 +1015,51 @@ with open('$THEME_DIR/emacs-oneshot-theme.el', 'w') as f:
 }
 echo "  emacs-oneshot-theme.el ✓"
 
-cat > "$THEME_DIR/tmux.conf" << TMUXEOF
-# --- Oneshot tmux theme (auto-generated) ---
-set -g status-style "bg=$BG,fg=$CREAM"
-set -g message-style "bg=$BG,fg=$GOLD"
-set -g message-command-style "bg=$BG,fg=$GOLD"
-set -g mode-style "bg=$GOLD,fg=$BG"
+cat > "$THEME_DIR/tmux-colors.conf" << TMUXEOF
+# --- Oneshot tmux colors (auto-generated) ---
+# Source this from tmux.conf.local to apply Oneshot palette.
+tmux_conf_24b_colour=true
 
-set -g status-left "#[fg=$BG,bg=$GOLD,bold] #S "
-set -g status-right "#[fg=$GOLD]#{?client_prefix,PREFIX ,}#[fg=$CREAM_DIM] %H:%M "
-set -g status-left-length 40
-set -g status-right-length 80
-set -g window-status-separator ""
+tmux_conf_theme_colour_1="$BG"
+tmux_conf_theme_colour_2="$SURFACE"
+tmux_conf_theme_colour_3="$CREAM_DIM"
+tmux_conf_theme_colour_4="$GOLD"
+tmux_conf_theme_colour_5="$GOLD_BRIGHT"
+tmux_conf_theme_colour_6="$BG"
+tmux_conf_theme_colour_7="$CREAM"
+tmux_conf_theme_colour_8="$BG"
+tmux_conf_theme_colour_9="$GOLD"
+tmux_conf_theme_colour_10="$CONTAINER"
+tmux_conf_theme_colour_11="$SURFACE"
+tmux_conf_theme_colour_12="$CREAM_DIM"
+tmux_conf_theme_colour_13="$CREAM"
+tmux_conf_theme_colour_14="$BG"
+tmux_conf_theme_colour_15="$BG"
+tmux_conf_theme_colour_16="$SURFACE"
+tmux_conf_theme_colour_17="$SURFACE"
 
-set -g window-status-format "#[fg=$CREAM_DIM] #I:#W "
-set -g window-status-current-format "#[fg=$BG,bg=$GOLD,bold] #I:#W "
+tmux_conf_theme_left_separator_main='\uE0B0'
+tmux_conf_theme_left_separator_sub='\uE0B1'
+tmux_conf_theme_right_separator_main='\uE0B2'
+tmux_conf_theme_right_separator_sub='\uE0B3'
 
-set -g pane-border-style "fg=$BORDER"
-set -g pane-active-border-style "fg=$GOLD"
-setw -g clock-mode-colour "$GOLD"
+tmux_conf_theme_status_left=" ❐ #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} "
+tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized} #{?battery_percentage,#{battery_percentage} ,}%R , %d %b | #{username}#{root} | #{hostname} "
+
+tmux_conf_theme_status_left_fg=",$CREAM,$CREAM_DIM"
+tmux_conf_theme_status_left_bg="$GOLD,$SURFACE,$SURFACE"
+tmux_conf_theme_status_left_attr="bold,none,none"
+
+tmux_conf_theme_status_right_fg="$CREAM_DIM,$CREAM,$BG"
+tmux_conf_theme_status_right_bg="$BG,$SURFACE,$GOLD"
+tmux_conf_theme_status_right_attr="none,none,bold"
+
+tmux_conf_copy_to_os_clipboard=true
+tmux_conf_update_plugins_on_launch=false
+tmux_conf_update_plugins_on_reload=false
+tmux_conf_uninstall_plugins_on_reload=false
 TMUXEOF
-echo "  tmux.conf ✓"
+echo "  tmux-colors.conf ✓"
 
 echo ""
 echo "Done! All theme files regenerated from base palette."
