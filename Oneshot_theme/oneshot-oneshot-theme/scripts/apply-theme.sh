@@ -56,6 +56,18 @@ for ffdir in "$HOME/.mozilla/firefox"/*.default* "$HOME/.mozilla/firefox/chrome"
   fi
 done
 
+# Apply Zen browser theme (self-contained zen.css → userChrome.css)
+ZEN_PROFILE_CHROME="$HOME/.zen/tc5bzr7y.Default (release)/chrome"
+if [[ -d "$ZEN_PROFILE_CHROME" ]]; then
+  if [[ -f "$CURRENT/zen.css" ]]; then
+    cp "$CURRENT/zen.css" "$ZEN_PROFILE_CHROME/userChrome.css"
+  else
+    cp "$HOME/.zen/chrome/userChrome.css" "$ZEN_PROFILE_CHROME/userChrome.css" 2>/dev/null || true
+  fi
+  cp "$CURRENT/firefox.css" "$ZEN_PROFILE_CHROME/colors.css"
+  cp "$HOME/.zen/chrome/userContent.css" "$ZEN_PROFILE_CHROME/userContent.css" 2>/dev/null || true
+fi
+
 # Reload tmux config for existing sessions
 tmux source-file ~/.config/tmux/tmux.conf 2>/dev/null || true
 

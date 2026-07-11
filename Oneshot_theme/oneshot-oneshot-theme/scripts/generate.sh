@@ -309,6 +309,85 @@ cat > "$THEME_DIR/firefox.css" << EOF
 EOF
 echo "  firefox.css ✓"
 
+cat > "$THEME_DIR/zen.css" << EOF
+@media (prefers-color-scheme: dark) {
+  :root {
+    --zen-colors-primary: $SURFACE !important;
+    --zen-primary-color: $GOLD !important;
+    --zen-colors-secondary: $SURFACE !important;
+    --zen-colors-tertiary: $BG !important;
+    --zen-colors-border: $GOLD !important;
+    --toolbarbutton-icon-fill: $GOLD !important;
+    --lwt-text-color: $CREAM !important;
+    --toolbar-field-color: $CREAM !important;
+    --tab-selected-textcolor: $GOLD_BRIGHT !important;
+    --toolbar-field-focus-color: $CREAM !important;
+    --toolbar-color: $CREAM !important;
+    --newtab-text-primary-color: $CREAM !important;
+    --arrowpanel-color: $CREAM !important;
+    --arrowpanel-background: $SURFACE !important;
+    --sidebar-text-color: $CREAM !important;
+    --lwt-sidebar-text-color: $CREAM !important;
+    --lwt-sidebar-background-color: $BG !important;
+    --toolbar-bgcolor: $SURFACE !important;
+    --newtab-background-color: $BG !important;
+    --zen-themed-toolbar-bg: $SURFACE !important;
+    --zen-main-browser-background: $BG !important;
+    --toolbox-bgcolor-inactive: $BG !important;
+  }
+
+  .sidebar-placesTree {
+    background-color: $BG !important;
+  }
+
+  #zen-workspaces-button {
+    background-color: $SURFACE !important;
+  }
+
+  #TabsToolbar {
+    background-color: $BG !important;
+  }
+
+  .urlbar-background {
+    background-color: $SURFACE !important;
+  }
+
+  .content-shortcuts {
+    background-color: $SURFACE !important;
+    border-color: $GOLD !important;
+  }
+
+  .urlbarView-url {
+    color: $GOLD !important;
+  }
+
+  #zenEditBookmarkPanelFaviconContainer {
+    background: $BG !important;
+  }
+
+  #zen-media-controls-toolbar {
+    & #zen-media-progress-bar {
+      &::-moz-range-track {
+        background: $SURFACE !important;
+      }
+    }
+  }
+
+  hbox#titlebar {
+    background-color: $BG !important;
+  }
+
+  #zen-appcontent-navbar-container {
+    background-color: $BG !important;
+  }
+
+  #navigator-toolbox {
+    background-color: $BG !important;
+  }
+}
+EOF
+echo "  zen.css ✓"
+
 cat > "$THEME_DIR/chromium.theme" << EOF
 ${BG_N}
 EOF
