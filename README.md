@@ -9,18 +9,14 @@ Inspired by the game *Oneshot*.
 ```
 oneshot/
 ├── Oneshot_theme/
-│   ├── README.md              # Theme documentation & usage
-│   └── oneshot-oneshot-theme/ # Theme config files
-│       ├── scripts/           # Theme generation tooling
-│       │   ├── generate.sh
-│       │   ├── cycle-theme.sh
-│       │   └── apply-theme.sh
-│       ├── backgrounds/       # Wallpapers
-│       ├── themes/            # VS Code extension
-│       ├── floatbar/          # Float bar OSD
-│       └── ...config files    # App-specific theme configs (terminals, editors, tmux, etc.)
-├── README.md                  # This file
-├── install.sh                 # Setup script
+│   ├── README.md               # Full documentation
+│   └── oneshot-oneshot-theme/  # Config files
+│       ├── scripts/            # generate.sh, cycle-theme.sh, apply-theme.sh
+│       ├── backgrounds/        # Wallpapers
+│       ├── themes/             # VS Code extension
+│       └── <app>.conf/css/...  # App-specific configs
+├── README.md
+├── install.sh
 └── LICENSE
 ```
 
