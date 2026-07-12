@@ -78,6 +78,11 @@ ln -sfn "$THEME_DIR/Oneshot_theme/oneshot-oneshot-theme" "$HOME/.config/omarchy/
 omarchy theme set oneshot
 ```
 
+After install, add the cycle keybinding to your Hyprland config:
+```
+bindd = SUPER SHIFT, R, Cycle theme, exec, ~/.config/omarchy/themes/oneshot/Oneshot_theme/oneshot-oneshot-theme/scripts/cycle-theme.sh
+```
+
 ### Cycle wallpaper + regenerate
 ```
 SUPER SHIFT + R
