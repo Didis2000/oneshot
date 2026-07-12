@@ -70,6 +70,14 @@ Warm purple & gold desktop theme for Hyprland, Waybar, terminals, editors, and m
 
 ## Usage
 
+### Install
+```bash
+THEME_DIR="$HOME/.config/omarchy/themes/oneshot"
+git clone https://github.com/Didis2000/oneshot "$THEME_DIR"
+ln -sfn "$THEME_DIR/Oneshot_theme/oneshot-oneshot-theme" "$HOME/.config/omarchy/current/theme"
+omarchy theme set oneshot
+```
+
 ### Cycle wallpaper + regenerate
 ```
 SUPER SHIFT + R
